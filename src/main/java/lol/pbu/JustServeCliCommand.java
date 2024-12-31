@@ -2,6 +2,7 @@ package lol.pbu;
 
 import io.micronaut.http.HttpResponse;
 import jakarta.inject.Inject;
+import lol.pbu.model.Email;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
@@ -50,7 +51,7 @@ public class JustServeCliCommand implements Runnable {
     JustServeClient justServeClient;
 
     public void run() {
-        HttpResponse<String> response = justServeClient.getTempPassword(email);
+        HttpResponse<String> response = justServeClient.getTempPassword(new Email(email));
         if (response.code() != 200) {
             System.out.println(response.body());
         }else {
