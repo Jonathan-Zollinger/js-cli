@@ -50,7 +50,7 @@ public class JustServeCliCommand implements Runnable {
     JustServeClient justServeClient;
 
     public void run() {
-        HttpResponse<String> response = justServeClient.postTempPassword(email);
+        HttpResponse<String> response = justServeClient.getTempPassword(email);
         if (response.code() != 200) {
             System.out.println(response.body());
         }else {

@@ -13,7 +13,7 @@ class JustServeClientSpec extends Specification {
 
     def "PostTempPassword"() {
         when:
-        HttpResponse<String> response = justServeClient.postTempPassword("jonathan.zollinger+jimmyHook@gmail.com")
+        HttpResponse<String> response = justServeClient.getTempPassword("jonathan.zollinger+jimmyHook@gmail.com")
 
         then:
         noExceptionThrown()
